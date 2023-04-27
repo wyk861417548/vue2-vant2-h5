@@ -1,0 +1,73 @@
+@import './vant.less';
+
+/* button button设置默认样式*/
+.el-button{padding:12px 20px;line-height:1;font-weight: 500;font-size: 14px;box-sizing: border-box;background: #fff;outline: none;border:1px solid #dcdfe6;border-radius: 4px;white-space: nowrap;cursor: pointer;transition: .1s;}
+.el-button:hover {color: #409eff;border-color: #c6e2ff;background-color: #ecf5ff;}
+.el-button-primary {color: #fff;background-color: #409eff;border-color: #409eff;}
+.el-button-primary:hover{background: #66b1ff;border-color: #66b1ff;color: #fff;}
+.el-button-success {color: #fff;background-color: #39C49E;border-color: #39C49E;}
+.el-button-success:hover {background: #5adab8;border-color: #5adab8;color: #fff;}
+.el-button-warning {color: #fff;background-color: #e6a23c;border-color: #e6a23c;}
+.el-button-warning:hover {background: #ebb563;border-color: #ebb563;color: #fff;}
+.el-button-danger {color: #fff;background-color: #f56c6c;border-color: #f56c6c;}
+.el-button-danger:hover {background: #f78989;border-color: #f78989; color: #fff;}
+.el-disabled {pointer-events: none;border:none; cursor: default;opacity: 0.6;background: rgba(0, 0, 0, 0.2);}
+.el-disabled:hover{background: rgba(0, 0, 0, 0.2);border:none;}
+.el-button-sub {color: #fff;background-color: #4C77F5;border-color: #4C77F5;}
+.el-button-sub:hover {background: #6c89e1;border-color: #6c89e1; color: #fff;}
+.el-button-dark {color: #fff;background-color: #788DCE;border-color: #788DCE;}
+.el-button-dark:hover {background: #a6bcfc;border-color: #a6bcfc; color: #fff;}
+.el-button-yellow {color: #fff;background-color: #FCC35D;border-color: #FCC35D;}
+.el-button-yellow:hover {background: #ffd791;border-color: #ffd791; color: #fff;}
+.el-button-cyan {color: #fff;background-color: #ECF9F5;border-color: #ECF9F5;}
+.el-button-cyan:hover {background: #d5fcf0;border-color: #d5fcf0; color: #fff;}
+
+/* 文字基本颜色 */
+.text-primary{color:#485067};
+.text-success{color:#4cd964};
+.text-warning{color:#f0ad4e};
+.text-error{color:#dd524d};
+.text-inverse{color:#fff};//反色
+.text-grey{color:#808080};//辅助灰色，如加载更多的提示信息
+.text-placeholder{color:#808080};
+.text-money{color: #E31D15;} //金额主题色
+.text-000{color: #000;}
+.text-333{color:#333};
+.text-666{color:#666};
+.text-999{color:#999}
+
+.page-bg{background-color: #FAFAFA;}
+
+// .5px 线条  t:上  b下
+.b-t,.b-b{position: relative;}
+.b-t::before,.b-b::after{content: "";position: absolute;z-index: 10;width: 100%;height: 1px;background-color: #DADADA;transform: scaleY(.5);}
+.b-t::before{top: 0;left: 0;}
+.b-b::after{bottom: 0;left: 0;}
+
+// 垂直线
+.custom-line{display: inline-block; width: 1px;height: 20px;margin: 0 10px;background-color: #DCDCDC;transform: scaleX(.5);}
+
+// 列表样式
+.custom-box{
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 5px #ddd;
+  .box-title{
+    margin-bottom:10px;
+    font-weight: bold;
+  }
+  .menu{
+    display: flex;
+    margin-top: 12px;
+    .menu-left{
+      width: 80px;
+      color: #999;
+    }
+    .menu-right{
+      flex: 1;
+      color: #333;
+    }
+  }
+}

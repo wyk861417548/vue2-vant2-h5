@@ -1,0 +1,72 @@
+
+// .van-button--primary{background: linear-gradient(rgb(255, 96, 49) 50%, rgb(234, 71, 53));border: 0px;box-shadow: 0px 3px 9px 2px #FFC3BB;}
+// .van-button--default{background: #F6F7F8;border: 0px;}
+
+// 自定义 vant 输入框自定义样式
+.custom-van-cell{
+  @input-backgroud:#f7faf8; //输入框背景色
+  @input-border:#f4f7f5; //输入框边框颜色
+  @input-border-focus:#0EC552; //输入框选中边框
+  .van-cell{
+    display: block;
+  }
+  .van-field {
+    padding: 0 0 10px 0;
+    &::before{left: 0;}
+    &::after{border: 0;}
+    .van-field__label{
+      padding:0 0 6px 6px;
+      width: auto;
+    }
+    .van-field__body{
+      min-height: 48px;
+      .van-field__control{
+        padding: 10px;
+        border: 1px solid @input-border;
+        border-radius: 4px;
+        background-color: @input-backgroud;
+        &:focus{
+          border: 1px solid @input-border-focus;
+        }
+      }
+      // 清空icon样式
+      .van-field__clear{
+        position: absolute;
+        right: 10px;
+        background-color: @input-backgroud;
+      }
+    }
+  }
+}
+
+// 自定义全局搜索组件演示
+.custom-van-search{
+  padding: 0;
+  background-color: transparent;
+  .van-search__content{
+    background-color: #fff;
+    .van-cell{
+      display: flex;
+      align-items: center;
+      height: 36px;
+      padding: 0 10px 0 0;
+    }
+  }
+  .van-field__body {
+    border: none !important;
+  }
+}
+
+// 自定义 tab切换演示
+.custom-van-tabs{
+  width: 100px;
+  .van-tab{
+    color: #666;
+    &.van-tab--active{
+      font-size: 18px;
+      color: #333;
+      font-weight: 900;
+      transition: all .1s;
+    }
+  }
+}

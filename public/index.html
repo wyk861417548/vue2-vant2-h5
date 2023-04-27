@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>模板</title>
+  <style>
+    .skeleton{
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      color: #666;
+      font-size: 16px;
+    }
+    .skeleton span{
+      display: inline-block;
+      overflow: hidden;
+      height: 1em;
+      line-height: 1;
+      vertical-align: -.25em;
+    }
+    .skeleton span::after {
+      display: block;
+      white-space: pre-wrap;
+      content: "...\A..\A.";
+      animation: skeletonLoading 3s infinite step-start both;
+    }
+    @keyframes skeletonLoading {
+      33% {
+        transform: translate3d(0, -2em, 0);
+      }
+      66% {
+        transform: translate3d(0, -1em, 0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <p class="skeleton">加载中<span></span></p>
+  </div>
+  
+  <!-- 微信浙里办埋点api -->
+  <!-- <script src="//assets.zjzwfw.gov.cn/assets/ZWJSBridge/1.1.0/zwjsbridge.js"></script>
+  <script src="//assets.zjzwfw.gov.cn/assets/zwlog/1.0.0/zwlog.js"></script> -->
+</body>
+
+</html>

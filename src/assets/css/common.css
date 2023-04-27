@@ -1,0 +1,219 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
+body{-webkit-overflow-scrolling:touch}
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul,li,ol { list-style:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+input,button{outline-style: none;}
+table { border-collapse:collapse; border-spacing:0; }
+html,body{height: 100%;}
+body{font-size: 14px !important;font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;color:#000 !important;}
+input{width:100%;background:transparent;border:none;color:#000;-webkit-appearance: none; /*去除系统默认的样式*/-webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* 点击高亮的颜色*/}
+input[type=checkbox]{width:auto;}
+input[type=radio]{width:auto;}
+input::placeholder{color:#959595;}
+textarea{width:100%;border:1px solid #dcdee2;border-radius: 2px; -webkit-appearance: none;}
+textarea:focus{outline: none;border:1px solid #57a3f3;resize: none;}
+img{max-width: 100%;}
+i{margin-right:2px ;}
+
+/* 隐藏高德地图标识 */
+.amap-logo,.amap-copyright{display: none !important;}
+
+/* 用于解决禁用页面滚动事件，页面取消事件后页面还是不能滚动 */
+*{ touch-action: pan-y;}
+
+/* h5 清除样式 */
+figure{margin:0; padding:0;}
+
+/* 隐藏百度地图标识 */
+.anchorBL{display: none;}
+
+/* 
+1. ::-webkit-scrollbar 滚动条整体部分
+2. ::-webkit-scrollbar-thumb 滚动条里面的小方块，能向上向下移动（或向左向右移动）
+3. ::-webkit-scrollbar-track 滚动条的轨道（里面装有Thumb）
+4. ::-webkit-scrollbar-button 滚动条的轨道的两端按钮，由于通过点击微调小方块的位置。
+5. ::-webkit-scrollbar-track-piece 内层轨道，滚动条中间部分
+6. ::-webkit-scrollbar-corner 边角，即垂直滚动条和水平滚动条相交的地方
+7. ::-webkit-resizer 两个滚动条的交汇处上用于拖动调整元素大小的小控件
+*/
+/* 滚动条样式设置 */
+::-webkit-scrollbar {width:0px;height:0px;}
+
+/* 页面背景色 */
+.page-bg{background-color: #f1f1f1;}
+
+select {width: 100%;/*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/border: solid 1px #000;border: none;/*很关键：将默认的select选择框样式清除*/appearance:none;-moz-appearance:none;-webkit-appearance:none;background:none;/*加padding防止文字覆盖*/padding-right: 14px;}
+select:focus {outline: none;webkit-tap-highlight-color: rgba(0,0,0,0);}
+
+input[type="checkbox"],input[type=radio]{width: 20px;height: 20px;position: relative;display: inline-block;vertical-align: middle;}
+
+input[type="checkbox"]::before,input[type=radio]::before{content: "";box-sizing: border-box; position: absolute;top: 0;left: 0;background: #fff;width: 100%;height: 100%;border:1px solid #ddd;border-radius: 50%;}
+input[type="checkbox"]::before{border-radius: 2px;}
+input[type="checkbox"]:checked::before,input[type=radio]:checked::before{border: 1px solid #108ee9;}
+
+input[type=radio]:checked::after{content: "";translate: all 1s;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);width: 65%;height: 65%;background: #108ee9;border-radius: 50%;}
+input[type="checkbox"]:checked::after{content: "";position: absolute;left: 50%;top: 50%;width: 20px;height: 10px;border-top: 3px solid #108ee9;border-right: 3px solid #108ee9;transform:translate(-50%,-65%) rotate(135deg) scale(.5);}
+
+
+/* 元素禁止事件 */
+.ban{pointer-events: none;}
+.ban-child > *{pointer-events: none;}
+
+/* flex布局 */
+.flex{display: flex;}
+.flex-fit{flex:1;}
+.j-flex{display: flex;justify-content: space-between;align-items: center;}
+.j-flex-a{display: flex;align-items: center;}
+.j-flex-b{display: flex;justify-content: space-between;}
+.j-flex-flow{display: flex;flex-flow: column;justify-content: space-between;}
+.j-flex-col{display: flex;flex-direction: column;}
+.j-flex-row{ display: flex;flex-direction: row;flex-wrap: wrap;}
+
+/* 多行垂直居中 */
+.j-v-c{display: flex;flex-direction: column;justify-content: center;align-items: center;}
+
+/* 占满当前父元素盒子 */
+.j-full-curbox{position:absolute;top:0;left:0;right:0;bottom:0;margin:0;overflow:auto;}
+.j-full-fixed{position:fixed;top:0;left:0;right:0;bottom:0;margin:0;overflow:auto;}
+.j-vh{width: 100vw;height: 100vh;box-sizing: border-box;overflow: auto;}
+
+/* 居中 */
+.j-full-center{position: absolute;top:50%;left: 50%;transform: translate(-50%,-50%);}
+
+/* 虚线 */
+.j-line-x{width: 100%;height:1px;background-image: linear-gradient(to right,#ccc 0%,#ccc 50%,transparent 50%);background-size: 15px 1px;background-repeat: repeat-x;}
+.j-line-y{width: 1px;height:140px;background-image: linear-gradient(to bottom,#ccc 0%,#ccc 50%,transparent 50%);background-size: 1px 15px;background-repeat: repeat-y;}
+
+/* flex布局下 失效 文字超出省略号 单行  和 多行 webkit-line-clamp设置行数*/
+.text-wrap{text-overflow: ellipsis;white-space: normal;word-break: break-all;}
+.text-overflow{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+
+/*flex布局下也能生效 文字超出省略号   */
+.text-overflowMut{display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;}
+
+/* 图片与背景cover */
+.j-img-fit{object-fit:cover}
+.j-bg-fit{background-repeat: no-repeat;background-position:center;background-size: cover;}
+
+.m-5{margin:5px;}
+.mb-5{margin-bottom:5px;}
+.mt-5{margin-top: 5px;}
+.mr-5{margin-right:5px;}
+.ml-5{margin-left: 5px;}
+
+.m-10{margin:10px;}
+.mb-10{margin-bottom:10px;}
+.mt-10{margin-top: 10px;}
+.mr-10{margin-right:10px;}
+.ml-10{margin-left: 10px;}
+
+.m-15{margin:15px;}
+.mb-15{margin-bottom:15px;}
+.mt-15{margin-top: 15px;}
+.mr-15{margin-right:15px;}
+.ml-15{margin-left: 15px;}
+
+.m-20{margin:20px;}
+.mb-20{margin-bottom:20px;}
+.mt-20{margin-top: 20px;}
+.mr-20{margin-right:20px;}
+.ml-20{margin-left: 20px;}
+
+.m-25{margin:25px;}
+.mb-25{margin-bottom:25px;}
+.mt-25{margin-top: 25px;}
+.mr-25{margin-right:25px;}
+.ml-25{margin-left: 25px;}
+
+.m-30{margin:30px;}
+.mb-30{margin-bottom:30px;}
+.mt-30{margin-top: 30px;}
+.mr-30{margin-right:30px;}
+.ml-30{margin-left: 30px;}
+
+
+/* padding */
+.p-5{padding:5px;}
+.pb-5{padding-bottom:5px;}
+.pt-5{padding-top: 5px;}
+.pr-5{padding-right:5px;}
+.pl-5{padding-left: 5px;}
+
+.p-10{padding:10px;}
+.pb-10{padding-bottom:10px;}
+.pt-10{padding-top: 10px;}
+.pr-10{padding-right:10px;}
+.pl-10{padding-left: 10px;}
+
+.p-15{padding:15px;}
+.pb-15{padding-bottom:15px;}
+.pt-15{padding-top: 15px;}
+.pr-15{padding-right:15px;}
+.pl-15{padding-left: 15px;}
+
+.p-20{padding:20px;}
+.pb-20{padding-bottom:20px;}
+.pt-20{padding-top: 20px;}
+.pr-20{padding-right:20px;}
+.pl-20{padding-left: 20px;}
+
+.p-25{padding:25px;}
+.pb-25{padding-bottom:25px;}
+.pt-25{padding-top: 25px;}
+.pr-25{padding-right:25px;}
+.pl-25{padding-left: 25px;}
+
+.p-30{padding:30px;}
+.pb-30{padding-bottom:30px;}
+.pt-30{padding-top: 30px;}
+.pr-30{padding-right:30px;}
+.pl-30{padding-left: 30px;}
+
+
+/* 字体 */
+.font12 { font-size: 12px;}
+.font14 { font-size: 14px;}
+.font16 { font-size: 16px;}
+.font18 { font-size: 18px;}
+.font20 { font-size: 20px;}
+.font22 { font-size: 22px;}
+.font24 { font-size: 24px;}
+.font26 { font-size: 26px;}
+.font28 { font-size: 28px;}
+.font30 { font-size: 30px;}
+
+.font100{font-weight: 100;}
+.font200{font-weight: 200;}
+.font300{font-weight: 300;}
+.font400{font-weight: 400;}
+.font500{font-weight: 500;}
+.font600{font-weight: 600;}
+.font700{font-weight: 700;}
+.font800{font-weight: 800;}
+.font900{font-weight: 900;}
+
+/* 自定义 tip提示 */
+#Y_tip span{font-size:14px;padding:7px;border-radius:5px;}
+
+/* 加载动画css 配合config.js中 loading使用*/
+.l-box .l-circle {width: 60px;height: 60px;position: absolute;left: 50%;top: 50%;transform: translate(-30px,-30px);}
+.l-circle div {content: '';position: absolute;width: 16px;height: 16px;background: #39C49E;top: 10px;left: 10px;transform-origin: 20px 20px;border-radius: 8px;animation: spin-a 2s infinite cubic-bezier(0.5, 0, 0.5, 1);}
+.l-circle .c2 {top: 10px;left: auto;right: 10px;transform-origin: -4px 20px;animation: spin-b 2s infinite cubic-bezier(0.5, 0, 0.5, 1);}
+.l-circle .c3 {top: auto;left: auto;right: 10px;bottom: 10px;transform-origin: -4px -4px;animation: spin-c 2s infinite cubic-bezier(0.5, 0, 0.5, 1);}
+.l-circle .c4 {top: auto;bottom: 10px;transform-origin: 20px -4px;animation: spin-d 2s infinite cubic-bezier(0.5, 0, 0.5, 1);}
+.l-box>span {width: 100px;height: 30px;position: absolute;left: 50%;margin-left: -50px;top: 50%;margin-top: 30px;color: #39C49E;font-size: 12px;text-align: center;}
+@keyframes spin-a {0% {transform: rotate(90deg);}50% {transform: rotate(180deg);}75% {transform: rotate(270deg);}100% {transform: rotate(360deg);}}
+@keyframes spin-b {0% {transform: rotate(90deg);}25% {transform: rotate(90deg);}25% {transform: rotate(180deg);}75% {transform: rotate(270deg);}100% {transform: rotate(360deg);}}
+@keyframes spin-c {0% {transform: rotate(90deg);}25% {transform: rotate(90deg);}50% {transform: rotate(180deg);}50% {transform: rotate(270deg);}100% {transform: rotate(360deg);}}
+@keyframes spin-d {0% {transform: rotate(90deg);}25% {transform: rotate(90deg);}50% {transform: rotate(180deg);}75% {transform: rotate(270deg);}75% {transform: rotate(360deg);}100% {transform: rotate(360deg);}}
