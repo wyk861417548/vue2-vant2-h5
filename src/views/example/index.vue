@@ -23,16 +23,6 @@
       </section>
 
       <section class="custom-box">
-        <h2 class="box-title">测试浙里办支付宝支付</h2>
-        <button class="el-button el-button-primary" @click="pay">支付</button>
-      </section>
-
-      <section class="custom-box">
-        <h2 class="box-title">测试支付宝或浙里办扫一扫</h2>
-        <button class="el-button el-button-primary" @click="handleClick">扫一扫</button>
-      </section>
-
-      <section class="custom-box">
         <h2 class="box-title">测试不是详情返回缓存页面，是否刷新</h2>
         <button class="el-button el-button-primary" @click="$skip('/example/Scroll')">scroll-单一</button>
       </section>
@@ -106,17 +96,10 @@ export default {
   },
 
   methods: {
-    handleClick(){
-      this.$config.scan().then(res=>{
-        console.log('scan',res);
-      })
-    },
-
     // 上传图片测试
     changeUpload(data){
       console.log('changeUpload',data);
     },
-
 
     customUpLoad(FormData){
       //customFile中 需要保证url属性存在
@@ -124,20 +107,6 @@ export default {
         this.customFile = res;
         console.log('this.customFile',this.customFile);
       })
-    },
-
-    pay(){
-      ZWJSBridge.pay({
-        platform:'1' ,
-        arg:{
-          "credential":"待⽀付的订单信息",
-          "inSandBox": false
-        }
-      }).then((result) => {
-        console.log(1,result);
-      }).catch((error) => {
-        console.log(2,error);
-      });
     },
 
     changeDatetimePicker(date){

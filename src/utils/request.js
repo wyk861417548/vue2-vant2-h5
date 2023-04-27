@@ -1,8 +1,6 @@
 import axios from 'axios';
 import F from "@/utils/config.js";
 
-// 环境的切换
-// axios.defaults.baseURL =process.env.VUE_APP_URL;
 // 请求超时时间10000
 axios.defaults.timeout = 10000;
 //设置cross跨域 并设置访问权限 允许跨域携带cookie信息
