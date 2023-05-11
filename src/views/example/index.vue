@@ -13,11 +13,6 @@
       </section>
 
       <section class="custom-box">
-        <h2 class="box-title">测试上传多张图片</h2>
-        <indexMut path='url' :limit='3' @change="changeUpload"></indexMut>
-      </section>
-      <section class="custom-box">
-
         <h2 class="box-title">测试上传视频</h2>
         <uploadVideo path='url' :limit='3' @change="changeUpload"></uploadVideo>
       </section>
@@ -60,11 +55,9 @@
 
 <script>
 import uploadVideo from '@/components/common/upload/uploadVideo.vue';
-import indexMut from '@/components/common/upload/indexMut.vue';
 export default {
   components:{
     uploadVideo,
-    indexMut
   },
   data () {
     return {
