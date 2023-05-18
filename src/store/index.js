@@ -8,8 +8,6 @@ let state = {
   storage:{
     token:''
   },
-
-  text:'xxx'
 }
 
 const store = new Vuex.Store({

@@ -1,6 +1,5 @@
 <template>
   <div class='j-full-curbox j-flex-col'>
-
     <main>
       <section v-for="(item,index) in imgList" :key="index">
         <img v-lazy="item.img" alt="" style="width:200px;height:200px;">
@@ -10,7 +9,6 @@
         <div v-lazy:background-image="item.img" style="width:200px;height:200px;background-repeat:no-repeat;background-size:100% 100%;background-position:0 0;"></div>
       </section>
     </main>
-
   </div>
 
 </template>

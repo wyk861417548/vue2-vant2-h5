@@ -7,7 +7,7 @@ import QRCode from 'qrcodejs2';
 export default {
   props:{
     // 二维码内容
-    code:{
+    text:{
       type:String,
       default:'无'
     },
@@ -32,13 +32,14 @@ export default {
   },
 
   mounted() {
-    this.setCode();
+    this.init();
   },
 
   methods: {
-    setCode() {
-      new QRCode(this.$refs.qrCodeDiv, {
-        text: this.code,
+    init() {
+      const ref = this.$refs.qrCodeDiv;
+      new QRCode(ref, {
+        text: this.text,
         width: 1080, //防止分辨率大的时候模糊
         height: 1080, //防止分辨率大的时候模糊
         colorDark: this.color, //二维码颜色
@@ -47,24 +48,21 @@ export default {
       })
 
       setTimeout(()=>{
-        this.img = this.$refs.qrCodeDiv.querySelector('img').src;
+        this.img = ref.querySelector('img').src;
       },0)
     },
 
-
-    clearCode() {
-      let code = document.getElementById("qrCode");
-      code.innerHTML = '';
+    reset() {
+      let text = document.getElementById("qrCode");
+      text.innerHTML = '';
     },
   },
 
   watch: {
     // 不使用makeCode  是因为  不能再动态改变颜色
-    code() {
-      this.clearCode();
-      this.$nextTick(function () {
-        this.setCode();
-      })
+    text() {
+      this.reset();
+      this.$nextTick(()=>{this.init()})
     }
   }
 }
