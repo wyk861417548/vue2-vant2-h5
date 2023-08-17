@@ -1,7 +1,7 @@
 <template>
   <Scroll ref="scroll" @scroll="getData">
     <div class="list"  v-for='(item,index) in dataList' :key='index' @click="$skip('/example/list/detail')">
-      {{item.name}} -- {{item.age}}
+      {{type}} -- {{item.name}} -- {{item.age}}
     </div>
   </Scroll>
 
@@ -9,6 +9,7 @@
 
 <script>
 export default {
+  props:['type'],
   data () {
     return {
       dataList:[],
@@ -31,7 +32,7 @@ export default {
       setTimeout(()=>{
         this.data.current++;
         for (let i = 0; i < 10; i++) {
-          this.dataList.push({name:this.data.current+"---i---"+i,age:i})
+          this.dataList.push({name:this.data.current,age:i})
         }
 
         this.$isScroll(this.$refs.scroll,this.dataList,30)

@@ -41,8 +41,6 @@ ios(){
         ├──images              # 图片
         ├──less                # 自定义全局less
         ├──css                 # 自全局css
-    ├── mixins                 # 代码混入
-        ├──keepAlive           # 页面缓存
 │   ├── components             # 全局公用组件
         ├──common              # 全局公共组件（“自动注册” 遵循一个文件夹里面定义index.vue格式，文件夹名称作为全局组件使用名称）
 │   ├── router                 # 路由
@@ -94,9 +92,7 @@ imgList:[
 </Scroll>
 
 <script>
-import keepAlive from '@/mixins/keepAlive.js'
 export default {
-  mixins:[keepAlive],
   data () {
     return {
       init:false,
@@ -114,7 +110,7 @@ export default {
   },
 
   activated(){
-    // 如果不是从详情页进入 init为了解决在详情页面刷新，导致数据不在加载问题
+    // 如果不是从详情页进入 init为了解决在详情页面刷新，导致数据不再加载问题
     if(!this.$route.meta.isBack || !this.init){
       this.init = true;
       this.initData();

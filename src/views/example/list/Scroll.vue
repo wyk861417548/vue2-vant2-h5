@@ -8,9 +8,7 @@
 </template>
 
 <script>
-import keepAlive from '@/mixins/keepAlive.js'
 export default {
-  mixins:[keepAlive],
   data () {
     return {
       init:false,

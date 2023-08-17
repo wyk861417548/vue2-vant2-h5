@@ -20,12 +20,20 @@ const router =  new Router({
 })
 
 // 全局路由守卫
-router.beforeEach((to,path,next)=>{
+router.beforeEach((to,form,next)=>{
+  useRouterUpdate(to,form)
   if(document.querySelector("#Y_loading")){
     document.body.removeChild(document.querySelector("#Y_loading"));
   }
   document.title = to.meta.title?to.meta.title:"模板"
   next();
 })
+
+function useRouterUpdate(to,from){
+  if(to.meta.keepAlive){
+    to.meta.isBack = from.meta.isBack?true:false;
+  }
+}
+
 
 export default router;

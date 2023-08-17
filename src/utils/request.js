@@ -1,8 +1,10 @@
 import axios from 'axios';
 import F from "@/utils/config.js";
 
-// 请求超时时间10000
-axios.defaults.timeout = 10000;
+const enums = {
+  SUCCESS:0
+}
+
 //设置cross跨域 并设置访问权限 允许跨域携带cookie信息
 axios.defaults.withCredentials = true;
 // post请求头
@@ -38,17 +40,21 @@ service.interceptors.response.use(res => {
   error => {
     loading(false)
     if (error.response) {
+      // 处理 HTTP 网络错误
+      let msg = "";
       switch (error.response.status) {       
         case 401: 
           break;          
         case 403:
+          msg = "拒绝访问";
           break;   
         case 404:
-          F.tip('网络请求不存在');
+          msg = "网络请求不存在";
           break;
         default:
-          F.tip("请稍后再试");
+          msg = '请稍后再试'
       }
+      F.tip(msg);
       return Promise.reject(error.response);
     }
   }
@@ -62,11 +68,7 @@ service.interceptors.response.use(res => {
  * @returns 
  */
 export function request(params){
-  if(params.opt && params.opt.loading === false){
-    ++count
-  }else{
-    loading(true);
-  }
+  params.opt && params.opt.loading === false?++count:loading(true);
 
   return new Promise((resolve,reject) => {
     service(params).then(res=>{
