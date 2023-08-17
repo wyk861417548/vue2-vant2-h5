@@ -1,8 +1,10 @@
 import axios from 'axios';
 import F from "@/utils/config.js";
 
+// 状态码
 const enums = {
-  SUCCESS:0
+  SUCCESS:'200', //成功状态码
+  NOTLOGIN:'401', //未授权登录
 }
 
 //设置cross跨域 并设置访问权限 允许跨域携带cookie信息
@@ -88,7 +90,7 @@ function loading(boolean){
 
 // 请求返回处理
 function requestHandle(res,opt={},resolve,reject){
-  if (res && res.data.code == 200 || opt.back) {
+  if (res && res.data.code == enums.SUCCESS || opt.back) {
     resolve(res.data)
     return;
   }
@@ -99,7 +101,7 @@ function requestHandle(res,opt={},resolve,reject){
 //错误统一处理
 function handle(res) {
   //  未登录处理
-  if (res.code == "401" || res.code == '-9001') {
+  if (res.code == enums.NOTLOGIN) {
     F.tip(res.msg ? res.msg : "请稍后再试");
     return;
   }
